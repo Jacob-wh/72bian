@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>提交-72便</title>
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+		
+		<link rel="stylesheet" type="text/css" href="./commit_files/weui.min.css">
+    	<link rel="stylesheet" type="text/css" href="./commit_files/style.css">
+    	<link rel="stylesheet" type="text/css" href="./commit_files/lCalendar.css">
+    	<style type="text/css">
+    		.paperForm {
+				margin-top: 8px;
+				padding: 6px 20px;
+				font-size: 16px;
+			}
+    		.paperForm .weui-cell__hd{
+				width:95px;
+			}
+			.icon-go {
+				display: inline;
+				margin-right: 5px;
+				height: 8px;
+			    width: 8px;
+			    border-width: 2px 2px 0 0;
+			    border-color: #C8C8CD;
+			    border-style: solid;
+			    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+			    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+			}
+    	</style>
+
+    	<script src="./commit_files/zepto.min.js"></script>
+    	<script src="./commit_files/lCalendar.min.js"></script>
+
+	</head>
+	<body ontouchstart="" style="opacity: 1;">
+		<header>
+			<div class="back_history" onclick="javascript:history.back(-1);">
+				<div class="back"></div>
+				<div class="logo"></div>
+			</div>
+			<div class="title">提交</div>
+		</header>
+		<article>
+			<div class="weui-cells weui-cells_form paperForm">
+				<div class="weui-cell">
+	                <div class="weui-cell__hd"><label for="" class="weui-label">取货时间</label></div>
+	                <div class="weui-cell__bd">
+	                    <input id="datetime" class="weui-input" type="text" value="" placeholder="请选择取货时间" readonly="">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><label class="weui-label">联系人</label></div>
+	                <div class="weui-cell__bd">
+	                    <input id="user" class="weui-input" type="text" placeholder="请输入联系人姓名">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><label class="weui-label">联系电话</label></div>
+	                <div class="weui-cell__bd">
+	                    <input id="phone" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入联系电话">
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><label class="weui-label">取货地点</label></div>
+	                <div class="weui-cell__bd" id="map-cell">
+	                    <input id="address" class="weui-input" type="text" placeholder="请选择取货地点" readonly="" onclick="return forwardFailure()">
+	                    
+	                </div>
+	                <div class="icon-go"></div>
+	                
+	            </div>
+	            <div class="weui-cell" id="textarea-cell" style="display:none;">
+	                <div class="weui-cell__hd">
+	                	<label class="weui-label">详细地址</label>
+	                	<label class="weui-label" style="font-size:14px; color:#998899;">(输入地址)</label>
+	                </div>
+	                <div class="weui-cell__bd">
+	                    <textarea id="detailAddress" class="weui-textarea" rows="2"> </textarea>
+	                </div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><label class="weui-label">预估重量</label></div>
+	                <div class="weui-cell__bd">
+	                    <input id="weight" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入废品的大概重量">
+	                </div>
+	                <span style="margin-right: 10px;">公斤</span>
+	            </div>
+	            
+	            
+	           
+	        </div>
+
+			<!-- <a class="down_btn" onclick="return forwardFailure()">提交</a> -->
+			<a href="javascript:;" class="weui_btn weui_btn_primary">按钮</a>
+			
+            <div class="js_dialog" id="send_dialog" style="opacity: 1 !important; display:none;">
+	            <div class="weui-mask"></div>
+	            <div class="weui-dialog">
+
+
+	        </div>
+	        
+	        <div class="js_dialog" id="alert_dialog" style="opacity: 1 !important; display:none;">
+	            <div class="weui-mask"></div>
+	            <div class="weui-dialog">
+	                <div class="weui-dialog__bd" id="alert_text">操作错误</div>
+	                <div class="weui-dialog__ft">
+	                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+	                </div>
+	            </div>
+	        </div>
+		</article>
+		<script src="./commit_files/login.js"></script>
+		<script src="./commit_files/submitOrder.js"></script>
+	
+</body></html>
