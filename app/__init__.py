@@ -1,6 +1,7 @@
 from .common.database import init_db
 from flask import Flask
 from config import Config
+from .common.routers import init_routes
 
 
 def create_app():
@@ -10,5 +11,8 @@ def create_app():
 
     # 数据库与app绑定
     init_db(app)
+
+    # 初始化蓝图
+    init_routes(app)
 
     return app
