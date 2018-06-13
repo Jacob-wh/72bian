@@ -4,6 +4,7 @@ from app.common.database import db
 from app import create_app
 from constant import *
 import os
+from werkzeug.contrib.fixers import ProxyFix
 
 app = create_app()
 # 理解为管理app,为你的app添加额外命令去做不同的事情，如数据库映射，
@@ -23,6 +24,9 @@ def runserver():
     host = os.environ.get('HOST', APP_ADDR)
     port = int(os.environ.get('PORT', APP_PORT))
     app.run(debug=debug, host=host, port=port, threaded=threaded)
+
+
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
 if __name__ == '__main__':
