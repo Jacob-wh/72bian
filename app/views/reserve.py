@@ -5,4 +5,4 @@ reserve = Blueprint('reserve', __name__, url_prefix='/reserve')
 
 @reserve.route('')
 def home():
-    return render_template('commit.html')
+    return render_template('reserve.html')
